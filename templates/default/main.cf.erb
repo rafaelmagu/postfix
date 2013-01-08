@@ -42,6 +42,8 @@ mailbox_command = /usr/bin/procmail -a "$EXTENSION"
 <% end -%>
 mailbox_size_limit = 0
 recipient_delimiter = +
+message_size_limit = <%= node['postfix']['message_size_limit'] %>
+disable_dns_lookups = no
 
 milter_default_action = <%= node['postfix']['milter_default_action'] %>
 milter_protocol = <%= node['postfix']['milter_protocol'] %>

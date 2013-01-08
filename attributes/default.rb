@@ -24,6 +24,7 @@ default['postfix']['mail_relay_networks']        = "127.0.0.0/8"
 default['postfix']['relayhost_role']             = "relayhost"
 default['postfix']['multi_environment_relay'] = false
 default['postfix']['inet_interfaces'] = nil
+default['postfix']['message_size_limit'] = 10240000
 
 default['postfix']['smtpd_use_tls'] = "yes"
 default['postfix']['smtp_sasl_auth_enable'] = "no"
