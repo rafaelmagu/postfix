@@ -14,14 +14,14 @@
 # limitations under the License.
 #
 
-require_recipe "postfix"
+include_recipe "postfix"
 
 execute "update-postfix-aliases" do
   command "newaliases"
   action :nothing
 end
 
-template "/etc/aliases" do
+template node['postfix']['aliases_db'] do
   source "aliases.erb"
   notifies :run, "execute[update-postfix-aliases]"
 end
