@@ -38,9 +38,9 @@ else
 end
 
 if relayhost
-    node.set['postfix']['relayhost'] = "[#{relayhost}]"
+    node.set['postfix']['main']['relayhost'] = "[#{relayhost}]"
 else
-    node.set['postfix']['relayhost'] = ""
+    node.set['postfix']['main']['relayhost'] = ""
 end
 
 include_recipe "postfix"
